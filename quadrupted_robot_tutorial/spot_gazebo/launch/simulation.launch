@@ -1,0 +1,37 @@
+<launch>
+
+    <!-- Empty world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="world_name" value="$(find spot_gazebo)/launch/world/normal.world"/>
+      <arg name="use_sim_time" value="true"/>
+    </include>
+
+    <!-- Robot -->
+    <arg name="model" default="$(find robot_description)/robot/quadruped_robot.urdf.xacro"/>
+    <param name="robot_description" command="$(find xacro)/xacro '$(arg model)'" />
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+  		args="-x 0
+                      -y 0
+                      -z 0.4
+                      -R 0
+                      -P 0
+                      -Y 0
+                      -urdf
+                      -model quadruped_robot
+                      -param robot_description"/>
+
+    <!-- Controllers -->
+    <rosparam file="$(find spot_gazebo)/config/controllers.yaml" command="load"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="spot_gazebo"
+          args="front_right_leg_joint front_right_thigh_joint front_left_shin_joint
+                front_left_leg_joint front_left_thigh_joint front_right_shin_joint
+                rear_right_leg_joint rear_right_thigh_joint rear_right_shin_joint
+                rear_left_leg_joint rear_left_thigh_joint rear_left_shin_joint"/>
+
+    <!-- Robot state publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher" respawn="false" output="screen">
+      <remap from="/joint_states" to="/spot_gazebo/joint_states" />
+      <param name="publish_frequency" type="double" value="40" />
+    </node>
+  
+</launch>

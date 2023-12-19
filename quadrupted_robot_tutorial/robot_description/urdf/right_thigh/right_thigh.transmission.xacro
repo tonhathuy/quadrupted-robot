@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="right_thigh_trans_v0" params="prefix">
+    <transmission name="${prefix}_right_thigh_trans_v0">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}_right_thigh_joint">
+	<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+	<actuator name="${prefix}_right_thigh_motor">
+	  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+  </xacro:macro>
+</robot>
+

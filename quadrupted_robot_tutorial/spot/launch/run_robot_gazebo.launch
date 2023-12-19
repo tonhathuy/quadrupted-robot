@@ -1,0 +1,12 @@
+<launch>
+
+    <!-- Gazebo Simulation -->
+    <include file="$(find spot_gazebo)/launch/simulation.launch" />
+
+    <!-- Joystick -->
+    <include file="$(find joypad)/launch/ramped_joypad.launch" />
+
+    <!-- Robot Controller -->
+    <include file="$(find controller)/launch/robot_controller.launch"/>
+
+</launch>

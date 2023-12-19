@@ -1,0 +1,70 @@
+spot_gazebo:
+  
+  joint_states_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 25
+
+  # FL leg controllers ------------------------------------------------------------ 
+  front_left_leg_joint:
+      type: effort_controllers/JointPositionController
+      joint: front_left_leg_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  front_left_thigh_joint:
+      type: effort_controllers/JointPositionController
+      joint: front_left_thigh_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  front_left_shin_joint:
+      type: effort_controllers/JointPositionController
+      joint: front_left_shin_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  # FR leg controllers ------------------------------------------------------------ 
+  front_right_leg_joint:
+      type: effort_controllers/JointPositionController
+      joint: front_right_leg_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  front_right_thigh_joint:
+      type: effort_controllers/JointPositionController
+      joint: front_right_thigh_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  front_right_shin_joint:
+      type: effort_controllers/JointPositionController
+      joint: front_right_shin_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  # RR leg controllers ------------------------------------------------------------ 
+  rear_right_leg_joint:
+      type: effort_controllers/JointPositionController
+      joint: rear_right_leg_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  rear_right_thigh_joint:
+      type: effort_controllers/JointPositionController
+      joint: rear_right_thigh_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  rear_right_shin_joint:
+      type: effort_controllers/JointPositionController
+      joint: rear_right_shin_joint
+      pid: {p: 400, i: 5,d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  # RL leg controllers ------------------------------------------------------------     
+  rear_left_leg_joint:
+      type: effort_controllers/JointPositionController
+      joint: rear_left_leg_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  rear_left_thigh_joint:
+      type: effort_controllers/JointPositionController
+      joint: rear_left_thigh_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+        
+  rear_left_shin_joint:
+      type: effort_controllers/JointPositionController
+      joint: rear_left_shin_joint
+      pid: {p: 400, i: 5, d: 9, i_clamp_min:  -1000, i_clamp_max: 1000}
+        

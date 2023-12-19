@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="controller" type="robot_controller_gazebo.py" name="ROBOT_CONTROLLER" output="screen"/>
+
+</launch>
