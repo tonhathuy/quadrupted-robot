@@ -10,7 +10,7 @@
     "ghcr.io/devcontainers/features/desktop-lite:1":  {
         "password": "0"
     }
-  }
+  },
   "workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
   "workspaceFolder": "/${localWorkspaceFolderBasename}",
   "mounts": [
