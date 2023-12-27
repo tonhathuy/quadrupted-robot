@@ -23,6 +23,7 @@ RUN sudo apt update && sudo apt upgrade -y
 # Install Git
 RUN sudo apt install -y git
 
+RUN sudo apt install ros-noetic-ros-control ros-noetic-ros-controllers -y
 # Rosdep update
 RUN rosdep update
 
